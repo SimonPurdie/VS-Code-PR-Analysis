@@ -25,7 +25,7 @@ Some major milestones in the introduction of AI-assisted coding tools are marked
 
 The chart above shows VS Code's monthly PR volume sustaining modest growth throughout the period following the adoption of that generation of AI coding tools.
 
-Everything changed in **May 2025** with the public preview of the **Copilot Coding Agent** - an autonomous tool capable of writing and submitting pull requests with minimal human oversight. From the period following that release, to the beginning of December 2025, the monthly PR submissions went from ~780 to ~1,400 - an increase of ~79% in 7 months.
+An inflection point occurred in **May 2025** with the public preview of the **Copilot Coding Agent** - an autonomous tool capable of writing and submitting pull requests with minimal human oversight. From the period following that release, to the beginning of December 2025, the monthly PR submissions went from ~780 to ~1,400 - an increase of ~79% in 7 months.
 
 ---
 
