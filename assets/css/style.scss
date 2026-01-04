@@ -33,6 +33,11 @@ img {
   height: auto;      /* Maintains aspect ratio */
   display: block;
   margin: 0 auto 2rem auto; /* Centers images with bottom spacing */
+  background-color: transparent !important;
+  /* Some browsers add a 'canvas' background to large images */
+  mix-blend-mode: normal; 
+  /* This prevents the white 'halo' effect on anti-aliased edges */
+  image-rendering: -webkit-optimize-contrast; 
 }
 
 hr {
