@@ -6,7 +6,7 @@ This project examines Pull Request (PR) activity in the [microsoft/vscode](https
 
 The goal is simple: **visualise how the rise of AI-assisted coding tools has impacted contribution patterns in a major open-source project.**
 
-The data tells a compelling story. As autonomous coding agents became publicly available in mid-2025, VS Code saw a dramatic surge in PR submissions. But more PRs didn't necessarily mean more merged code. The merge success rate dropped sharply even as review times improved, suggesting that the VS Code maintainers' quality bar held firm against the flood of AI-generated contributions.
+The data tells a compelling story. As autonomous coding agents became publicly available in mid-2025, VS Code saw a dramatic surge in PR submissions. But more PRs didn't necessarily mean more merged code. The merge success rate dropped sharply even as review times improved, suggesting that the VS Code maintainers were dealing with a flood of AI-generated contributions that did not meet the project's standards.
 
 ---
 
