@@ -6,30 +6,23 @@
   max-width: 70vw;
 }
 
-body {
-  color: #c9d1d9;
-  background-color: #0d1117;
+markdown-body {
+
+  .hr {
+    background-color: #f4f4f4
+  }
+
 }
 
-a { color: #58a6ff; }
+body {
+  color: #f4f4f4;
+  background-color: #181D2B; 
+}
+
+a { color: #70bbff; }
 
 a:hover {
   text-decoration: underline;
-}
-
-header {
-  background-color: #161b22;
-  border-bottom: 1px solid #30363d;
-}
-
-code {
-  background-color: #21262d;
-  color: #e6edf3;
-}
-
-.wrapper {
-  max-width: 2836px; 
-  margin: 0 auto;    /* Centers dashboard on ultra-wide screens */
 }
 
 img {
@@ -42,25 +35,4 @@ img {
   mix-blend-mode: normal; 
   /* This prevents the white 'halo' effect on anti-aliased edges */
   image-rendering: -webkit-optimize-contrast; 
-}
-
-hr {
-  height: 1px;
-  padding: 0;
-  margin: 24px 0;
-  background-color: #30363d; // GitHub dark border color
-  border: 0;
-}
-
-blockquote {
-  padding: 0 1em;
-  color: #8b949e;
-  border-left: 0.25em solid #30363d;
-}
-
-h1, h2, h3, h4 {
-  color: #e6edf3; // Brighter white for headers
-  font-weight: 600;
-  margin-top: 24px;
-  margin-bottom: 16px;
 }
