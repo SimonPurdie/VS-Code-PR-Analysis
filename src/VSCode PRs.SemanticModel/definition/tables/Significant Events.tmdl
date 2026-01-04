@@ -1,0 +1,41 @@
+table 'Significant Events'
+	lineageTag: b22a5ad9-335e-490f-9265-bd8ee5bf1a09
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e0c8a253-25f4-40e0-bfe8-0360908344b4
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Event
+		dataType: string
+		lineageTag: 6cb47d04-a36c-461f-bd35-7d6f0dd63c8c
+		summarizeBy: none
+		sourceColumn: Event
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Significant Events' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Simon\Desktop\JUST IT\VSCode PR Analysis Additional Data.xlsx"), null, true),
+				    #"Significant Events_Sheet" = Source{[Item="Significant Events",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"Significant Events_Sheet",{{"Column1", Int64.Type}, {"Column2", type text}, {"Column3", type any}, {"Column4", type any}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column3", "Column4"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Columns", each ([Column1] <> null)),
+				    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows",{{"Column1", "Date"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns",{{"Date", type date}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type1",{{"Column2", "Event"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

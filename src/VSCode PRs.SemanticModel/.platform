@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "VSCode PRs"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "225e016b-eb6f-47e5-bb8d-7ae8bba1524c"
+  }
+}

@@ -1,0 +1,180 @@
+table vscode_prs
+	lineageTag: 8f923576-f3c9-42f5-9f7d-50e9c80382b7
+
+	measure 'median lines changed' = MEDIANX(vscode_prs, vscode_prs[additions] + vscode_prs[deletions])
+		lineageTag: 53556f2f-f48e-44ed-b48a-6c7026a3bc52
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Merged% = DIVIDE(CALCULATE(COUNTROWS(vscode_prs),vscode_prs[merged]=TRUE()),COUNTROWS(vscode_prs))
+		formatString: 0
+		lineageTag: 7602ec29-c465-4206-814d-00c416dc831e
+
+	measure NumBots = CALCULATE(COUNTROWS('vscode_prs'), vscode_prs[user.type] = "Bot")
+		formatString: 0
+		lineageTag: 3987244b-b1ef-488e-9d7e-5e7c3b47db7c
+
+	measure NumUsers = CALCULATE(COUNTROWS('vscode_prs'), vscode_prs[user.type] = "User")
+		formatString: 0
+		lineageTag: 405dae8b-28a0-44c7-acca-246ce191293f
+
+	column number
+		dataType: int64
+		formatString: 0
+		lineageTag: 79e4f310-f50a-452a-8afb-56a59140324c
+		summarizeBy: sum
+		sourceColumn: number
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		lineageTag: b54a8862-327d-4e6d-ad4f-dcfcf6a90f12
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b096c600-3418-448d-ba26-2b2c7830e775
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: 461222dd-546f-4f64-b5bc-b0d8010966e7
+			defaultHierarchy: LocalDateTable_c77cc391-10f1-4c3d-a860-5be38d46944c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column merged_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 09597a89-b62a-4b77-9365-60d2dff2010a
+		summarizeBy: none
+		sourceColumn: merged_at
+
+		variation Variation
+			isDefault
+			relationship: e1eccac9-1baa-4c13-bd04-db1a7d27f268
+			defaultHierarchy: LocalDateTable_121cc38e-0e6e-48fa-850d-a736946a09cf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'user.type'
+		dataType: string
+		lineageTag: eb77e874-b6c2-4b9b-94a7-72b4e32b4be0
+		summarizeBy: none
+		sourceColumn: user.type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'base.ref'
+		dataType: string
+		lineageTag: 08e113bf-b51f-4f28-a7ff-c4e3e4c2bbfd
+		summarizeBy: none
+		sourceColumn: base.ref
+
+		annotation SummarizationSetBy = Automatic
+
+	column comments
+		dataType: int64
+		formatString: 0
+		lineageTag: 59afa3b0-6db4-4995-893a-74c1d35617ff
+		summarizeBy: sum
+		sourceColumn: comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column additions
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d0c0804-c9a0-4847-9ead-8ba8adc48ccb
+		summarizeBy: sum
+		sourceColumn: additions
+
+		annotation SummarizationSetBy = Automatic
+
+	column deletions
+		dataType: int64
+		formatString: 0
+		lineageTag: 8daa2e76-03de-42a9-a0e2-c1e65e7aca57
+		summarizeBy: sum
+		sourceColumn: deletions
+
+		annotation SummarizationSetBy = Automatic
+
+	column merged
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ff71bedf-f39f-4f81-b69d-8f921b6ea4e1
+		summarizeBy: none
+		sourceColumn: merged
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'days to merge' =
+			
+			IF(
+			    ISBLANK(vscode_prs[merged_at]),
+			    BLANK(),
+			    DATEDIFF(vscode_prs[created_at],vscode_prs[merged_at], DAY)
+			)
+		formatString: 0
+		lineageTag: fcdacccc-6182-4cd3-8e14-c23f3b3f8146
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'creation date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 366bd1f1-4707-4e68-9d1a-4ae71019bd0d
+		summarizeBy: none
+		sourceColumn: creation date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'merge date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 14b87ad3-307f-4d89-93a1-fc5ff0cfbad3
+		summarizeBy: none
+		sourceColumn: merge date
+
+		variation Variation
+			isDefault
+			relationship: b2c826a1-bd0d-49dd-94ad-124b0a3af6c6
+			defaultHierarchy: LocalDateTable_956a8538-5db7-4ef7-982c-c86d4f3e8ed8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition vscode_prs = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Simon\Desktop\JUST IT\vscode_prs.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"number", Int64.Type}, {"title", type text}, {"created_at", type datetime}, {"merged_at", type datetime}, {"user.type", type text}, {"base.ref", type text}, {"comments", Int64.Type}, {"additions", Int64.Type}, {"deletions", Int64.Type}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Changed Type", "merged", each if [merged_at] <> null then true else false),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Conditional Column",{{"merged", type logical}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Changed Type1",{"number", "title", "created_at", "merged_at", "merged", "user.type", "base.ref", "comments", "additions", "deletions"}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Reordered Columns", "created_at", "created_at - Copy"),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Duplicated Column",{{"created_at - Copy", type date}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type2",{{"created_at - Copy", "creation date"}}),
+				    #"Duplicated Column1" = Table.DuplicateColumn(#"Renamed Columns", "merged_at", "merged_at - Copy"),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Duplicated Column1",{{"merged_at - Copy", "merge date"}}),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Renamed Columns1",{{"merge date", type date}})
+				in
+				    #"Changed Type3"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

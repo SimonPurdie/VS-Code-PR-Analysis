@@ -1,0 +1,28 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["vscode_prs","Significant Events","VSCode Usage (Stack Overflow De"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table vscode_prs
+ref table DateTableTemplate_cee7c81d-96b6-4751-bc9b-8d85631a84d2
+ref table 'Significant Events'
+ref table 'VSCode Usage (Stack Overflow De'
+ref table LocalDateTable_121cc38e-0e6e-48fa-850d-a736946a09cf
+ref table LocalDateTable_956a8538-5db7-4ef7-982c-c86d4f3e8ed8
+ref table 'Date Table'
+ref table LocalDateTable_c77cc391-10f1-4c3d-a860-5be38d46944c
+ref table LocalDateTable_fe98ec13-f92a-40a6-80aa-3363a14e95a3
+ref table LocalDateTable_bea3b48f-4400-4d19-ac4e-518838dee1c1
+ref table LocalDateTable_46f00ca7-7b51-4cb8-bb5f-f76ed3fcdbb9
+
+ref cultureInfo en-US
+

@@ -1,0 +1,39 @@
+relationship e1eccac9-1baa-4c13-bd04-db1a7d27f268
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vscode_prs.merged_at
+	toColumn: LocalDateTable_121cc38e-0e6e-48fa-850d-a736946a09cf.Date
+
+relationship b2c826a1-bd0d-49dd-94ad-124b0a3af6c6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vscode_prs.'merge date'
+	toColumn: LocalDateTable_956a8538-5db7-4ef7-982c-c86d4f3e8ed8.Date
+
+relationship c43f5afc-14e5-8a8e-21df-fde24e881c80
+	crossFilteringBehavior: bothDirections
+	fromColumn: vscode_prs.'creation date'
+	toColumn: 'Date Table'.Date
+
+relationship e3eb3956-fb63-b389-cdce-96f20a7a2e5a
+	fromColumn: 'Significant Events'.Date
+	toColumn: 'Date Table'.Date
+
+relationship 461222dd-546f-4f64-b5bc-b0d8010966e7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vscode_prs.created_at
+	toColumn: LocalDateTable_c77cc391-10f1-4c3d-a860-5be38d46944c.Date
+
+relationship 6fdd29e0-659c-410f-8773-3dd09221de40
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Date Table'.'Month Plot'
+	toColumn: LocalDateTable_fe98ec13-f92a-40a6-80aa-3363a14e95a3.Date
+
+relationship d370ca36-f16f-43b2-abe7-2c3d847846d1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Date Table'.Date
+	toColumn: LocalDateTable_bea3b48f-4400-4d19-ac4e-518838dee1c1.Date
+
+relationship a25788fe-4cbd-4fd7-bf14-735bfaf7a8b5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'VSCode Usage (Stack Overflow De'.'Year Date'
+	toColumn: LocalDateTable_46f00ca7-7b51-4cb8-bb5f-f76ed3fcdbb9.Date
+

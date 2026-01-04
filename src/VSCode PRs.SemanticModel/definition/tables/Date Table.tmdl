@@ -1,0 +1,45 @@
+table 'Date Table'
+	lineageTag: 6e4d4e2c-ccaa-481f-8e08-26184244eb9b
+
+	column Date
+		formatString: yyyy-mm
+		lineageTag: 5fbeef12-5441-4cac-a47d-afc772ab7db7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: d370ca36-f16f-43b2-abe7-2c3d847846d1
+			defaultHierarchy: LocalDateTable_bea3b48f-4400-4d19-ac4e-518838dee1c1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Month Plot' = DATE(YEAR('Date Table'[Date]), MONTH('Date Table'[Date]),1)
+		formatString: General Date
+		lineageTag: 726992cd-4afc-4fe5-b09a-a9402e1ca389
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 6fdd29e0-659c-410f-8773-3dd09221de40
+			defaultHierarchy: LocalDateTable_fe98ec13-f92a-40a6-80aa-3363a14e95a3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date Table' = calculated
+		mode: import
+		source =
+				
+				VAR MinDate = MIN(vscode_prs[created_at])
+				VAR MaxDate = MAX(vscode_prs[created_at])
+				
+				RETURN
+				    CALENDAR(MinDate, MaxDate)
+
+	annotation PBI_Id = 58921cfbe11e407b82a61c3f5f42641c
+

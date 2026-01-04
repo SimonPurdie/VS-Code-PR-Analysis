@@ -1,0 +1,74 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 410,
+            "y": 296
+          },
+          "nodeIndex": "vscode_prs",
+          "nodeLineageTag": "8f923576-f3c9-42f5-9f7d-50e9c80382b7",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 60
+          },
+          "nodeIndex": "Significant Events",
+          "nodeLineageTag": "b22a5ad9-335e-490f-9265-bd8ee5bf1a09",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 291,
+            "y": 0
+          },
+          "nodeIndex": "VSCode Usage (Stack Overflow De",
+          "nodeLineageTag": "ba529fea-bea4-4286-9168-f2a7fc3a1311",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 942,
+            "y": 135.5
+          },
+          "nodeIndex": "Date Table",
+          "nodeLineageTag": "6e4d4e2c-ccaa-481f-8e08-26184244eb9b",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}
