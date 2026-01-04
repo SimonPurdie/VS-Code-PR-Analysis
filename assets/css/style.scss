@@ -2,21 +2,8 @@
 ---
 @import "{{ site.theme }}";
 
-.wrapper {
-  /* Increase max-width to allow more horizontal expansion */
-  max-width: 75vw; 
-  
-  /* Ensure it remains centered */
-  margin: 0 auto;
-  
-  /* Adjust padding so content doesn't hit the very edge on smaller screens */
-  padding: 20px 40px; 
-}
-
-/* If not using a theme, Jekyll might use 'section' tags instead */
-#main_content {
-  max-width: 75vw;
-  margin: 0 auto;
+.container-lg {
+  max-width: 70vw;
 }
 
 body {
