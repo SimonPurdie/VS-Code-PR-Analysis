@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project examines the evolution of Pull Request (PR) activity in the [microsoft/vscode](https://github.com/microsoft/vscode) repository - one of the world's largest and most active open-source projects - from May 2022 through December 2025.
+This project examines Pull Request (PR) activity in the [microsoft/vscode](https://github.com/microsoft/vscode) repository - one of the world's largest and most active open-source projects - from May 2022 through December 2025.
 
 The goal is simple: **visualise how the rise of AI-assisted coding tools has impacted contribution patterns in a major open-source project.**
 
