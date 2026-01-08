@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project examines contributions to Microsoft's Visual Studio Code - one of the world's largest and most active open-source projects. Any contributor can propose changes with a Pull Request (PR), which maintainers review before integrating into the main code. The analysis covers May 2022 through December 2025 and explores the volume and nature of these contributions over this period.
+This project examines contributions to Microsoft's [Visual Studio Code](https://github.com/microsoft/vscode) repository - one of the world's largest and most active open-source projects. Any contributor can propose changes with a Pull Request (PR), which maintainers review before integrating into the main code. The analysis covers May 2022 through December 2025 and explores the volume and nature of these contributions over this period.
 
 The goal is simple: **visualise how the rise of AI-assisted coding tools has impacted contribution patterns in a major open-source project.**
 
