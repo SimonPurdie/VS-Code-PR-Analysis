@@ -2,11 +2,11 @@
 
 ## Overview
 
-This project examines Pull Request (PR) activity in the [microsoft/vscode](https://github.com/microsoft/vscode) repository - one of the world's largest and most active open-source projects - from May 2022 through December 2025.
+This project examines contributions to Microsoft's Visual Studio Code - one of the world's largest and most active open-source projects. Any contributor can propose changes with a Pull Request (PR), which maintainers review before integrating into the main code. The analysis covers May 2022 through December 2025 and explores the volume and nature of these contributions over this period.
 
 The goal is simple: **visualise how the rise of AI-assisted coding tools has impacted contribution patterns in a major open-source project.**
 
-The data tells a compelling story. As autonomous coding agents became publicly available in mid-2025, VS Code saw a dramatic surge in PR submissions. But more PRs didn't necessarily mean more merged code. The merge success rate dropped sharply even as review times improved, suggesting that the VS Code maintainers were dealing with a flood of AI-generated contributions that did not meet the project's standards.
+The data tells a compelling story. After autonomous coding agents became publicly available in mid-2025, VS Code saw a significant increase in PR submissions. But more PRs didn't necessarily mean more merged code. The merge success rate dropped sharply even as review times improved, suggesting that the VS Code maintainers were dealing with a flood of AI-generated contributions that did not meet the project's standards.
 
 ---
 
@@ -15,7 +15,7 @@ The data tells a compelling story. As autonomous coding agents became publicly a
 
 ## Key Findings
 
-### 1. The 2025 Agentic AI Surge
+### 1. Late 2025 PR Increase
 
 ![PR Submission Rate Chart](images/pr%20submission%20rate.png)
 
@@ -25,7 +25,7 @@ Some major milestones in the introduction of AI-assisted coding tools are marked
 
 The chart above shows VS Code's monthly PR volume sustaining modest growth throughout the period following the adoption of that generation of AI coding tools.
 
-An inflection point occurred in **May 2025** with the public preview of the **Copilot Coding Agent** - an autonomous tool capable of writing and submitting pull requests with minimal human oversight. From the period following that release, to the beginning of December 2025, the monthly PR submissions went from ~780 to ~1,400 - an increase of ~79% in 7 months.
+An inflection point seems to occur in **May 2025** with the public preview of the **Copilot Coding Agent** - an autonomous tool capable of writing and submitting pull requests with minimal human oversight. From the period following that release, to the beginning of December 2025, the monthly PR submissions went from ~780 to ~1,400 - an increase of ~79% in 7 months.
 
 ---
 
